@@ -1,13 +1,9 @@
 # Is based on the latest ubuntu
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-# Update APT using apt-get update
-RUN apt-get update
+RUN apt-get update && apt-get upgrade -y
 
-# Upgrade currently installed software through APT using apt-get upgrade -y
-RUN apt-get upgrade -y
-
-RUN apt-get install -y python3 python3-pip
+RUN apt-get install -y python3 python3-pip python3-setuptools python3-dev build-essential
 
 RUN pip3 install flask
 
